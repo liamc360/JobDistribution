@@ -1,0 +1,10 @@
+#!/bin/sh
+
+FILE=${@: -1}
+LENGTH=$(($#-1))
+ARRAY=${@:1:$LENGTH}
+DIR=$( dirname "$(readlink -f "$0")" )
+echo "PROVER : BDDTab"
+echo "OPTIONS:" $ARRAY
+echo "FILE   :" $FILE
+/usr/bin/time sh -c "cat $FILE | $DIR/bddtab $ARRAY | grep -v Garbage"

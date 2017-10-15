@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Example use:
+# ./runKSP ../samples/lwb/k_branch_p.0002.ksp -c ~/provers/ksp-2016-02-01/snf++#negative4.conf
+
+DIR=$( dirname "$(readlink -f "$0")" )
+FILE="${!#}"
+set -- "${@:1:$(($#-1))}"
+echo "PROVER : KSP"
+echo "OPTIONS: -b $@"
+echo "FILE   : $FILE"
+#echo "$DIR/ksp -b $@ -i $FILE"
+/usr/bin/time $DIR/ksp -b $@ -i $FILE

@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+use Cwd 'abs_path';
+
+$in   = shift(@ARGV);
+$out  = shift(@ARGV);
+if (-e "$in") {
+  $prolog = $out.".$$.".prolog;
+  $tbox   = $out.".$$.".tbox;
+  $binDir  = abs_path($0);
+  $binDir  =~ s!\/[^\/]+$!!;
+  system("cat $in | $binDir/toProlog > $prolog");
+  system("$binDir/hyloToALC.pl $prolog $out > /dev/null");
+} else {
+  print(STDERR "File $in does not exist\n");
+}

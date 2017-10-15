@@ -1,0 +1,83 @@
+body{
+	background-color: #3F51B5 !important;
+}
+
+#cardArea {
+
+	width:480px;
+	height:400px;
+	
+	position:absolute; /*it can be fixed too*/
+	left:0; right:0;
+	top:0; bottom:0;
+	margin:auto;
+
+	/*this to solve "the content will not be cut when the window is smaller than the content": */
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+	
+}
+
+#cont1{
+	width:80%;
+}
+.noShadows{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none !important;
+}
+
+.loginCard{
+	width:480px;
+	height:400px;
+	
+	position:relative; /*it can be fixed too*/
+	
+	/*this to solve "the content will not be cut when the window is smaller than the content": */
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+	background-color:#ffffff;
+}
+.w3-container w3-blue{
+	background-color:#ffffff;
+	opacity:1;
+}
+.w3-card-4{
+	background-color:#ffffff;
+	opacity:1;
+}
+
+#descriptionArea {
+	float: left;
+}
+#loginBtn{
+	float:right;
+	width:100%;
+}
+
+
+
+#loginArea {
+	float: right;
+}
+#loginTitle{
+	background-color: #3F51B5 !important;
+}
+
+h1#title{
+	color:  #353131;
+	text-align: center;
+	font-weight: 700;
+	font-size:250%;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+}
+h1#subtitle{
+	color: #ffffff;
+	font-weight: 700;
+	font-size:200%;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+}

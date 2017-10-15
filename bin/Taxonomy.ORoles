@@ -1,0 +1,7 @@
+All entries are in format:
+"entry" {n: parent_1 ... parent_n} {m: child_1 child_m}
+
+"*UROLE*" {0:} {2: "-R0" "R0"}
+"-R0" {1: "*UROLE*"} {1: "*EROLE*"}
+"R0" {1: "*UROLE*"} {1: "*EROLE*"}
+"*EROLE*" {2: "-R0" "R0"} {0:}

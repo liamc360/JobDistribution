@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+use Cwd 'abs_path';
+
+$in      = pop(@ARGV);
+$binDir  = abs_path($0);
+$binDir  =~ s!\/[^\/]+$!!;
+$conf    = $in.".conf";
+open(CONF_IN, "$binDir/fact.conf");
+open(CONF_OUT,">$conf");
+while (<CONF_IN>) {
+  if (/TBox/) {
+    foreach $arg (@ARGV) {
+	$arg =~ s/^\-*//;
+	print(CONF_OUT "$arg\n");
+    }
+    print(CONF_OUT "TBox = $in\n");
+  } else {
+    print(CONF_OUT);
+  }
+}
+close(CONF_IN);
+close(CONF_OUT);
+print "PROVER : FaCT++\n";
+print "OPTIONS: ",join(" ",@ARGV),"\n";
+print "FILE   : $in\n";
+system("/usr/bin/time $binDir/FaCT++ $conf");

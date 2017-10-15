@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+while (<STDIN>) {
+  s/\[r1\]/br1 /g;
+  s/\<r1\>/dr1 /g;
+  s!\|!\\/!g;
+  s/~ /neg /g;
+  s/~/neg /g;
+  s/\-\>/\=\>/g;
+  s/\s*$//ms;
+  print("$_.") unless (/^(begin|end|\%)/);
+
+}

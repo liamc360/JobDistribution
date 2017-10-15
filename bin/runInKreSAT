@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DIR=$( dirname "$(readlink -f "$0")" )
+FILE="${!#}"
+set -- "${@:1:$(($#-1))}"
+echo "PROVER : InKreSAT"
+echo "OPTIONS: $@"
+echo "FILE   : $FILE"
+/usr/bin/time $DIR/inkresat $@ $FILE

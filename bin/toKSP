@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+($in,$out) = @ARGV;
+if (-e "$in") {
+  open(IN,$in);
+  open(OUT,">$out");
+  print(OUT "sos(formulas).\n");
+  while (<IN>) {
+    chop();
+    print(OUT "$_.\n") unless (/begin|end/);
+  }
+  print(OUT "end_of_list.\n");
+  close(OUT);
+  close(IN);
+} else {
+  print(STDERR "File $in does not exist\n");
+}
+

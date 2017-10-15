@@ -1,0 +1,40 @@
+* BDDTab:
+  toBBDTab <benchmarkFile> <inputFile>
+  runBDDTab <inputFile>
+
+  Example 1:
+  bin/toBDDTab samples/lwb/k_d4_n.0012.intohylo samples/lwb/k_d4_n.0012.bddtab
+  bin/runBDDTab samples/lwb/k_d4_n.0012.bddtab
+
+  Example 2 (with options):
+  bin/toBDDTab samples/lwb/k_d4_n.0012.intohylo samples/lwb/k_d4_n.0012.bddtab
+  bin/runBDDTab -buc -reorder samples/lwb/k_d4_n.0012.bddtab
+  
+* FaCT++
+  toFact++ <benchmarkFile> <inputFile>
+  runFaCT++ <inputFile>
+
+  Example 1:
+  bin/toFaCT++ samples/lwb/k_d4_n.0012.intohylo samples/lwb/k_d4_n.0012.tbox
+  bin/runFaCT++ samples/lwb/k_d4_n.0012.tbox
+
+  Example 2 (with options):
+  bin/toFaCT++ samples/lwb/k_d4_n.0012.intohylo samples/lwb/k_d4_n.0012.tbox
+  bin/runFaCT++ -absorptionFlags=BEfCFS -useAnywhereBlocking=0 samples/lwb/k_d4_n.0012.tbox
+
+* InKreSAT
+  runInKreSAT <benchmarkFile>
+
+  Example 1:
+  bin/runInKreSAT samples/lwb/k_d4_n.0012.intohylo
+
+  Example 2 (with options):
+  bin/runInKreSAT -ed -eb samples/lwb/k_d4_n.0012.intohylo
+
+* KSP
+  toKSP <benchmarkFile> <inputFile>
+  runKSP <inputFile> <options>
+  
+  Example 1 (with options): 
+  bin/toKSP samples/lwb/k_d4_n.0012.intohylo samples/lwb/k_d4_n.0012.ksp 
+  bin/runKSP -c bin/snf++#negative4.conf samples/lwb/k_d4_n.00012.ksp 
